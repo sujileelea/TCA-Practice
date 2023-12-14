@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093714C62B2AEF4D00BC4BCB /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093714C52B2AEF4D00BC4BCB /* Counter.swift */; };
+		093714C82B2AF73F00BC4BCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093714C72B2AF73F00BC4BCB /* AboutView.swift */; };
 		09D0356E2B2AA9CF004F4205 /* TCA_PracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0356D2B2AA9CF004F4205 /* TCA_PracticeApp.swift */; };
 		09D035702B2AA9CF004F4205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0356F2B2AA9CF004F4205 /* ContentView.swift */; };
 		09D035722B2AA9D0004F4205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D035712B2AA9D0004F4205 /* Assets.xcassets */; };
 		09D035752B2AA9D0004F4205 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D035742B2AA9D0004F4205 /* Preview Assets.xcassets */; };
-		09D0357C2B2AAA00004F4205 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0357B2B2AAA00004F4205 /* Feature.swift */; };
 		09D0357F2B2AAA38004F4205 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 09D0357E2B2AAA38004F4205 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093714C52B2AEF4D00BC4BCB /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		093714C72B2AF73F00BC4BCB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		09D0356A2B2AA9CF004F4205 /* TCA-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCA-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D0356D2B2AA9CF004F4205 /* TCA_PracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_PracticeApp.swift; sourceTree = "<group>"; };
 		09D0356F2B2AA9CF004F4205 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09D035712B2AA9D0004F4205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D035742B2AA9D0004F4205 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		09D0357B2B2AAA00004F4205 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 		09D0356C2B2AA9CF004F4205 /* TCA-Practice */ = {
 			isa = PBXGroup;
 			children = (
+				09D035732B2AA9D0004F4205 /* Preview Content */,
+				09D035712B2AA9D0004F4205 /* Assets.xcassets */,
 				09D0356D2B2AA9CF004F4205 /* TCA_PracticeApp.swift */,
 				09D0356F2B2AA9CF004F4205 /* ContentView.swift */,
-				09D0357B2B2AAA00004F4205 /* Feature.swift */,
-				09D035712B2AA9D0004F4205 /* Assets.xcassets */,
-				09D035732B2AA9D0004F4205 /* Preview Content */,
+				093714C52B2AEF4D00BC4BCB /* Counter.swift */,
+				093714C72B2AF73F00BC4BCB /* AboutView.swift */,
 			);
 			path = "TCA-Practice";
 			sourceTree = "<group>";
@@ -148,9 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D0357C2B2AAA00004F4205 /* Feature.swift in Sources */,
+				093714C82B2AF73F00BC4BCB /* AboutView.swift in Sources */,
 				09D035702B2AA9CF004F4205 /* ContentView.swift in Sources */,
 				09D0356E2B2AA9CF004F4205 /* TCA_PracticeApp.swift in Sources */,
+				093714C62B2AEF4D00BC4BCB /* Counter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
