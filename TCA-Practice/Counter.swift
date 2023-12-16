@@ -8,16 +8,8 @@
 import SwiftUI
 import ComposableArchitecture
 
-private let readMe: String = """
-  This screen demonstrates the basics of the Composable Architecture in an archetypal counter application.
-
-  The domain of the application is modeled using simple data types that correspond to the mutable state of the application and any actions that can affect that state or the outside world.
-"""
-
-// MARK: - Feature domain
-
 @Reducer
-struct Counter {
+struct CounterFeature {
     
     struct State: Equatable {
         var count = 0
@@ -28,7 +20,7 @@ struct Counter {
         case incrementButtonTapped
     }
     
-    var body: some Reducer<State, Action> {
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .decrementButtonTapped:
@@ -42,60 +34,45 @@ struct Counter {
     }
 }
 
-// MARK: - Feature View
-
 struct CounterView: View {
     
-    let store: StoreOf<Counter>
+    let store: StoreOf<CounterFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            HStack(spacing: 30) {
-                // 뺄셈 버튼
-                Button(action: {
-                    viewStore.send(.decrementButtonTapped)
-                }, label: {
-                    Image(systemName: "minus")
-                })
-                //표시될 숫자
-                Text ("\(viewStore.state.count)")
-                    .monospacedDigit()
-                // 덧셈 버튼
-                Button(action: {
-                    viewStore.send(.incrementButtonTapped)
-                }, label: {
-                    Image(systemName: "plus")
-                })
+            VStack {
+                Text("\(viewStore.count)")
+                    .font(.largeTitle)
+                    .padding()
+                    .background(Color.black.opacity(0.1))
+                    .cornerRadius(10)
+                HStack {
+                    Button("-") {
+                        viewStore.send(.decrementButtonTapped)
+                    }
+                    .font(.largeTitle)
+                    .padding()
+                    .background(Color.black.opacity(0.1))
+                    .cornerRadius(10)
+                    
+                    Button("+") {
+                        viewStore.send(.incrementButtonTapped)
+                    }
+                    .font(.largeTitle)
+                    .padding()
+                    .background(Color.black.opacity(0.1))
+                    .cornerRadius(10)
+                }
             }
         }
     }
 }
 
-// MARK: - 전체 페이지
-
-struct CounterDemoView: View {
-    
-    @State var store = Store(initialState: Counter.State()) {
-        Counter()
-    }
-    
-    var body: some View {
-        Form {
-          Section {
-            AboutView(readMe: readMe)
-          }
-          Section {
-            CounterView(store: self.store)
-              .frame(maxWidth: .infinity)
-          }
-        }
-        .buttonStyle(.borderless)
-        .navigationTitle("Counter demo")
-    }
-}
-
 #Preview {
-    CounterDemoView(store: Store(initialState: Counter.State(), reducer: {
-        Counter()
-    }))
+    CounterView (
+        store: Store(initialState: CounterFeature.State()) {
+            CounterFeature()
+                ._printChanges()
+        }
+    )
 }
